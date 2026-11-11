@@ -136,6 +136,39 @@ a {
   margin-bottom: 2rem;
 }
 
+.hero-publisher {
+  min-height: min(70vh, 40rem);
+  align-items: center;
+}
+
+.brand-hero {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--blue-deep);
+}
+
+.hero-publisher .lede {
+  margin: 0;
+  max-width: 34rem;
+}
+
+.home-stub-lines {
+  margin: 0;
+  max-width: 28rem;
+}
+
+.home-stub-visual {
+  min-height: 22rem;
+  background:
+    linear-gradient(160deg, rgba(6, 71, 117, 0.18), rgba(66, 181, 247, 0.35)),
+    linear-gradient(45deg, #d9eef9 25%, transparent 25%) -12px 0 / 24px 24px,
+    linear-gradient(-45deg, #d9eef9 25%, transparent 25%) -12px 0 / 24px 24px,
+    #eef7fc;
+}
+
 .hero-visual {
   background: linear-gradient(145deg, #cfd8df 0%, #9aa7b2 100%);
   min-height: 26rem;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Управление Риском{% endblock %}</title>
+  <title>{% block title %}Литпрайм{% endblock %}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -13,8 +13,8 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="{{ url_for('index') }}">
-        Управление Риском
-        <span>научный журнал</span>
+        Литпрайм
+        <span>издательство</span>
       </a>
       <nav class="nav" aria-label="Основное меню">
         <a class="{% if active == 'home' %}is-active{% endif %}" href="{{ url_for('index') }}">Главная</a>
