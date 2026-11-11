@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Управление Риском — журнал</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        Управление Риском
+        <span>научный журнал</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">Главная</a>
+        <a href="about.html">Об издательстве</a>
+        <a class="is-active" href="journals.html">Журналы</a>
+      </nav>
+      <button class="avatar" type="button" aria-label="Профиль">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="page page-wide">
+    <section class="journal-intro">
+      <div class="journal-intro-cover">
+        <img src="assets/cover-ur.png" alt="Обложка журнала Управление Риском">
+      </div>
+      <div class="journal-intro-copy">
+        <h1>Управление Риском</h1>
+        <div class="placeholder-lines tall">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span class="short"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="archive-block" aria-labelledby="latest-title">
+      <div class="section-banner">
+        <h2 id="latest-title">Последний выпуск</h2>
+      </div>
+
+      <a class="issue-row is-stub" href="issue.html">
+        <div class="issue-meta">
+          <div class="issue-year">—</div>
+          <div class="placeholder-lines">
+            <span></span>
+            <span class="mid"></span>
+          </div>
+        </div>
+        <div class="issue-thumb" aria-hidden="true"></div>
+      </a>
+    </section>
+
+    <a class="section-banner archive-link" href="archive.html">
+      <h2>Прошлые выпуски</h2>
+      <span class="archive-link-hint">Открыть архив</span>
+    </a>
+  </main>
+</body>
+</html>

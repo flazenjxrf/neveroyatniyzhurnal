@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Об издательстве</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        Управление Риском
+        <span>научный журнал</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">Главная</a>
+        <a class="is-active" href="about.html">Об издательстве</a>
+        <a href="journals.html">Журналы</a>
+      </nav>
+      <button class="avatar" type="button" aria-label="Профиль">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="page page-wide">
+    <section class="panel">
+      <button class="panel-head" type="button" aria-expanded="true">
+        <span>О нас</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="placeholder-lines">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <button class="panel-head" type="button" aria-expanded="true">
+        <span>Контакты</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="placeholder-lines">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-closed">
+      <button class="panel-head" type="button" aria-expanded="false">
+        <span>Авторам</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="placeholder-lines">
+          <span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-closed">
+      <button class="panel-head" type="button" aria-expanded="false">
+        <span>Редакционная политика</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="placeholder-lines">
+          <span></span><span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll(".panel-head").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const panel = btn.closest(".panel");
+        const open = panel.classList.toggle("panel-closed");
+        btn.setAttribute("aria-expanded", String(!open));
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Архив — Управление Риском</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        Управление Риском
+        <span>научный журнал</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">Главная</a>
+        <a href="about.html">Об издательстве</a>
+        <a class="is-active" href="journals.html">Журналы</a>
+      </nav>
+      <button class="avatar" type="button" aria-label="Профиль">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="page page-wide">
+    <p class="archive-back">
+      <a href="journal.html">← К журналу</a>
+    </p>
+
+    <section class="panel">
+      <button class="panel-head" type="button" aria-expanded="true">
+        <span>2025</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="archive-year-issues">
+          <a class="archive-issue-stub" href="issue.html">
+            <span></span>
+          </a>
+          <a class="archive-issue-stub" href="issue.html">
+            <span></span>
+          </a>
+          <a class="archive-issue-stub" href="issue.html">
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <button class="panel-head" type="button" aria-expanded="true">
+        <span>2024</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="archive-year-issues">
+          <a class="archive-issue-stub" href="issue.html">
+            <span></span>
+          </a>
+          <a class="archive-issue-stub" href="issue.html">
+            <span></span>
+          </a>
+          <a class="archive-issue-stub" href="issue.html">
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-closed">
+      <button class="panel-head" type="button" aria-expanded="false">
+        <span>2023</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="archive-year-issues">
+          <a class="archive-issue-stub" href="issue.html"><span></span></a>
+          <a class="archive-issue-stub" href="issue.html"><span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-closed">
+      <button class="panel-head" type="button" aria-expanded="false">
+        <span>2022</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="archive-year-issues">
+          <a class="archive-issue-stub" href="issue.html"><span></span></a>
+          <a class="archive-issue-stub" href="issue.html"><span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-closed">
+      <button class="panel-head" type="button" aria-expanded="false">
+        <span>2021</span>
+        <span class="panel-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="panel-body">
+        <div class="archive-year-issues">
+          <a class="archive-issue-stub" href="issue.html"><span></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll(".panel-head").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const panel = btn.closest(".panel");
+        const closed = panel.classList.toggle("panel-closed");
+        btn.setAttribute("aria-expanded", String(!closed));
+      });
+    });
+  </script>
+</body>
+</html>
