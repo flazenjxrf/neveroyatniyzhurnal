@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Управление Риском — главная{% endblock %}
+{% block content %}
+<main class="page">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-visual">
+      <img src="/assets/cover-ur.png.jpg" alt="Обложка журнала Управление Риском">
+    </div>
+
+    <div class="hero-copy">
+      <div class="eyebrow">№5 — 2026</div>
+      <h1 id="hero-title">Перспективы управления водными ресурсами в Китае</h1>
+      <div class="meta">
+        <span>Митина Н. Н., Клюкин Н. Ю., Тай Линтун, Чжоу Чаоин, Шумакова Е. М.</span>
+        <span>Рубрика: Управление рисками за рубежом</span>
+      </div>
+      <p>
+        В работе анализируется современное состояние «умного» управления водными ресурсами
+        в КНР с учётом основных проблем водопользования, его законодательного и технического
+        обеспечения. Рассматриваются перспективы развития отрасли и риски для устойчивого
+        водопользования.
+      </p>
+      <a class="cta" href="{{ url_for('journals') }}">Перейти к журналам</a>
+    </div>
+  </section>
+
+  <section class="promo" aria-labelledby="promo-title">
+    <div class="promo-inner">
+      <h2 id="promo-title">Свежий номер журнала уже в архиве</h2>
+      <p>
+        В выпуске №5 за 2026 год — статьи об арктическом судоходстве, технологической
+        модернизации промышленности, рисках ИИ в банках и международном сотрудничестве.
+      </p>
+    </div>
+  </section>
+</main>
+{% endblock %}

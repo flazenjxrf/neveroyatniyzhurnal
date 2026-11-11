@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Архив — Управление Риском{% endblock %}
+{% block content %}
+<main class="page page-wide">
+  <p class="archive-back">
+    <a href="{{ url_for('journal') }}">← К журналу</a>
+  </p>
+
+  {% if not years %}
+  <p>В архиве пока нет выпусков.</p>
+  {% endif %}
+
+  {% for year in years %}
+  <section class="panel{% if not loop.first %} panel-closed{% endif %}">
+    <button class="panel-head" type="button" aria-expanded="{{ 'true' if loop.first else 'false' }}">
+      <span>{{ year }}</span>
+      <span class="panel-chevron" aria-hidden="true"></span>
+    </button>
+    <div class="panel-body">
+      <div class="archive-year-issues">
+        {% for issue in by_year[year] %}
+        <a class="archive-issue-link" href="{{ url_for('issue', issue_id=issue.id) }}">
+          №{{ issue.issue_number }} — {{ issue.title or ('Управление Риском №' ~ issue.issue_number ~ ' — ' ~ issue.year) }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+</main>
+
+<script>
+  document.querySelectorAll(".panel-head").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const panel = btn.closest(".panel");
+      const closed = panel.classList.toggle("panel-closed");
+      btn.setAttribute("aria-expanded", String(!closed));
+    });
+  });
+</script>
+{% endblock %}

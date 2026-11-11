@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ issue.title or ('Выпуск №' ~ issue.issue_number) }} — Управление Риском{% endblock %}
+{% block content %}
+<main class="page page-wide">
+  <p class="archive-back">
+    <a href="{{ url_for('journal') }}">← К журналу</a>
+    <span aria-hidden="true">·</span>
+    <a href="{{ url_for('archive') }}">Архив</a>
+  </p>
+
+  <div class="section-banner">
+    <h1 class="section-banner-title">
+      {{ issue.title or ('Управление Риском №' ~ issue.issue_number ~ ' — ' ~ issue.year) }}
+    </h1>
+  </div>
+
+  <section class="issues-list article-rows" aria-label="Статьи выпуска">
+    {% for article in articles %}
+    <article class="issue-row">
+      <div class="issue-meta issue-meta-wide">
+        {% if article.section %}
+        <div class="article-section">{{ article.section }}</div>
+        {% endif %}
+        <h2 class="article-title">{{ article.title_ru }}</h2>
+        {% if article.authors_short %}
+        <div class="article-authors">{{ article.authors_short }}</div>
+        {% endif %}
+        {% if article.url %}
+        <a class="article-source" href="{{ article.url }}" target="_blank" rel="noopener">Источник</a>
+        {% endif %}
+      </div>
+      <div class="issue-thumb" aria-hidden="true"></div>
+    </article>
+    {% else %}
+    <p>В этом выпуске пока нет статей.</p>
+    {% endfor %}
+  </section>
+
+  <a class="section-banner archive-link issue-bottom-cta" href="{{ url_for('archive') }}">
+    <h2>К архиву</h2>
+    <span class="archive-link-hint">Прошлые выпуски</span>
+  </a>
+</main>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Управление Риском{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ url_for('index') }}">
+        Управление Риском
+        <span>научный журнал</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a class="{% if active == 'home' %}is-active{% endif %}" href="{{ url_for('index') }}">Главная</a>
+        <a class="{% if active == 'about' %}is-active{% endif %}" href="{{ url_for('about') }}">Об издательстве</a>
+        <a class="{% if active == 'journals' %}is-active{% endif %}" href="{{ url_for('journals') }}">Журналы</a>
+      </nav>
+      <button class="avatar" type="button" aria-label="Профиль">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+</body>
+</html>

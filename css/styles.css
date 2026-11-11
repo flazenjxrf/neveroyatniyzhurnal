@@ -472,6 +472,55 @@ a.issue-row:hover {
   transform: translateX(4px);
 }
 
+.archive-issue-link {
+  display: block;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.archive-issue-link:hover {
+  transform: translateX(4px);
+  opacity: 0.85;
+}
+
+.issue-title-line {
+  margin-top: 0.35rem;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+.article-section {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  margin-bottom: 0.35rem;
+}
+
+.article-title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.article-authors {
+  margin-top: 0.45rem;
+  color: var(--text-soft);
+}
+
+.article-source {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: var(--blue-deep);
+  font-weight: 600;
+}
+
+.article-source:hover {
+  text-decoration: underline;
+}
+
 .article-rows {
   margin-bottom: 1.5rem;
 }
