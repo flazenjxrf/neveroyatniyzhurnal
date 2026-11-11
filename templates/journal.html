@@ -18,28 +18,32 @@
 
   <section class="archive-block" aria-labelledby="latest-title">
     <div class="section-banner">
-      <h2 id="latest-title">Последний выпуск</h2>
+      <h2 id="latest-title">
+        Последний выпуск{% if latest %} — №{{ latest.issue_number }} / {{ latest.year }}{% endif %}
+      </h2>
     </div>
 
-    {% if latest %}
-    <a class="issue-row" href="{{ url_for('issue', issue_id=latest.id) }}">
-      <div class="issue-meta">
-        <div class="issue-year">{{ latest.year }}</div>
-        <div>
-          <strong>№{{ latest.issue_number }}</strong>
-          <div class="issue-title-line">{{ latest.title }}</div>
+    {% if articles %}
+    <section class="issues-list article-rows" aria-label="Статьи последнего выпуска">
+      {% for article in articles %}
+      <a class="issue-row" href="{{ url_for('article', article_id=article.id) }}">
+        <div class="issue-meta issue-meta-wide">
+          {% if article.section %}
+          <div class="article-section">{{ article.section }}</div>
+          {% endif %}
+          <h3 class="article-title">{{ article.title_ru }}</h3>
+          {% if article.authors_short %}
+          <div class="article-authors">{{ article.authors_short }}</div>
+          {% endif %}
         </div>
-      </div>
-      <div class="issue-thumb" aria-hidden="true"></div>
-    </a>
+        <div class="issue-thumb" aria-hidden="true"></div>
+      </a>
+      {% endfor %}
+    </section>
+    {% elif latest %}
+    <p>В последнем выпуске пока нет статей.</p>
     {% else %}
-    <div class="issue-row is-stub">
-      <div class="issue-meta">
-        <div class="issue-year">—</div>
-        <div>Выпуски пока не загружены</div>
-      </div>
-      <div class="issue-thumb" aria-hidden="true"></div>
-    </div>
+    <p>Выпуски пока не загружены.</p>
     {% endif %}
   </section>
 

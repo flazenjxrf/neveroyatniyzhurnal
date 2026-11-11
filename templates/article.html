@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title_ru }} — Управление Риском{% endblock %}
+{% block content %}
+<main class="page">
+  <p class="archive-back">
+    <a href="{{ url_for('issue', issue_id=article.issue_id) }}">← К выпуску</a>
+    <span aria-hidden="true">·</span>
+    <a href="{{ url_for('journal') }}">Журнал</a>
+    <span aria-hidden="true">·</span>
+    <a href="{{ url_for('archive') }}">Архив</a>
+  </p>
+
+  <article class="article-page">
+    {% if article.section %}
+    <p class="article-section">{{ article.section }}</p>
+    {% endif %}
+
+    <p class="eyebrow">
+      №{{ article.issue_number }} — {{ article.year }}
+    </p>
+
+    <h1>{{ article.title_ru }}</h1>
+
+    {% if article.title_en %}
+    <p class="article-title-en">{{ article.title_en }}</p>
+    {% endif %}
+
+    {% if article.authors_short or article.authors_full %}
+    <p class="article-authors">{{ article.authors_full or article.authors_short }}</p>
+    {% endif %}
+
+    {% if article.affiliations %}
+    <p class="article-affiliations">{{ article.affiliations }}</p>
+    {% endif %}
+
+    {% if article.abstract_ru %}
+    <section class="article-block">
+      <h2>Аннотация</h2>
+      <p>{{ article.abstract_ru }}</p>
+    </section>
+    {% endif %}
+
+    {% if article.abstract_en %}
+    <section class="article-block">
+      <h2>Abstract</h2>
+      <p>{{ article.abstract_en }}</p>
+    </section>
+    {% endif %}
+
+    {% if article.keywords_ru %}
+    <section class="article-block">
+      <h2>Ключевые слова</h2>
+      <p>{{ article.keywords_ru }}</p>
+    </section>
+    {% endif %}
+
+    {% if article.keywords_en %}
+    <section class="article-block">
+      <h2>Keywords</h2>
+      <p>{{ article.keywords_en }}</p>
+    </section>
+    {% endif %}
+  </article>
+</main>
+{% endblock %}

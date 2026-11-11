@@ -147,10 +147,22 @@ def journal():
         LIMIT 1
         """
     )
+    articles: list[dict[str, Any]] = []
+    if latest:
+        articles = fetch_all(
+            """
+            SELECT id, section, title_ru, authors_short
+            FROM articles
+            WHERE issue_id = %s
+            ORDER BY id ASC
+            """,
+            (latest["id"],),
+        )
     return render_template(
         "journal.html",
         active="journals",
         latest=latest,
+        articles=articles,
     )
 
 
@@ -238,6 +250,31 @@ def issue_legacy():
     if not latest:
         abort(404)
     return redirect(url_for("issue", issue_id=latest["id"]))
+
+
+@app.route("/article/<int:article_id>")
+def article(article_id: int):
+    article_row = fetch_one(
+        """
+        SELECT
+          a.id, a.section, a.title_ru, a.title_en,
+          a.authors_short, a.authors_full, a.affiliations,
+          a.abstract_ru, a.abstract_en, a.keywords_ru, a.keywords_en,
+          a.url, a.source_article_id, a.issue_id,
+          i.year, i.issue_number, i.title AS issue_title
+        FROM articles a
+        JOIN issues i ON i.id = a.issue_id
+        WHERE a.id = %s
+        """,
+        (article_id,),
+    )
+    if not article_row:
+        abort(404)
+    return render_template(
+        "article.html",
+        active="journals",
+        article=article_row,
+    )
 
 
 @app.route("/health")

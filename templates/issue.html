@@ -16,7 +16,7 @@
 
   <section class="issues-list article-rows" aria-label="Статьи выпуска">
     {% for article in articles %}
-    <article class="issue-row">
+    <a class="issue-row" href="{{ url_for('article', article_id=article.id) }}">
       <div class="issue-meta issue-meta-wide">
         {% if article.section %}
         <div class="article-section">{{ article.section }}</div>
@@ -25,12 +25,9 @@
         {% if article.authors_short %}
         <div class="article-authors">{{ article.authors_short }}</div>
         {% endif %}
-        {% if article.url %}
-        <a class="article-source" href="{{ article.url }}" target="_blank" rel="noopener">Источник</a>
-        {% endif %}
       </div>
       <div class="issue-thumb" aria-hidden="true"></div>
-    </article>
+    </a>
     {% else %}
     <p>В этом выпуске пока нет статей.</p>
     {% endfor %}

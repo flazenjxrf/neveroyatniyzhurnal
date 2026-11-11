@@ -272,6 +272,11 @@ a {
   padding: 1.5rem 0 2rem;
 }
 
+.journals-grid-single {
+  grid-template-columns: minmax(0, 22rem);
+  justify-content: start;
+}
+
 .journal-card {
   display: flex;
   flex-direction: column;
@@ -510,15 +515,38 @@ a.issue-row:hover {
   color: var(--text-soft);
 }
 
-.article-source {
-  display: inline-block;
-  margin-top: 0.55rem;
-  color: var(--blue-deep);
-  font-weight: 600;
+.article-page h1 {
+  margin: 0.4rem 0 0.75rem;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  line-height: 1.25;
 }
 
-.article-source:hover {
-  text-decoration: underline;
+.article-title-en {
+  margin: 0 0 1rem;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+.article-affiliations {
+  margin: 0 0 1.5rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+.article-block {
+  margin: 1.5rem 0;
+}
+
+.article-block h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+}
+
+.article-block p {
+  margin: 0;
+  line-height: 1.6;
+  white-space: pre-wrap;
 }
 
 .article-rows {

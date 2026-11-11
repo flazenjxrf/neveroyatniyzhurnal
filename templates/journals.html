@@ -2,7 +2,7 @@
 {% block title %}Журналы{% endblock %}
 {% block content %}
 <main class="page page-wide">
-  <section class="journals-grid" aria-label="Список журналов">
+  <section class="journals-grid journals-grid-single" aria-label="Список журналов">
     <a class="journal-card" href="{{ url_for('journal') }}">
       <div class="journal-cover">
         <img src="/assets/cover-ur.png.jpg" alt="">
@@ -10,24 +10,6 @@
       <div class="journal-text">
         <strong>Управление Риском</strong>
         <span></span>
-        <span></span>
-        <span class="short"></span>
-      </div>
-    </a>
-
-    <a class="journal-card" href="{{ url_for('journal') }}">
-      <div class="journal-cover is-empty" aria-hidden="true"></div>
-      <div class="journal-text">
-        <strong>Страховое дело</strong>
-        <span></span>
-        <span class="short"></span>
-      </div>
-    </a>
-
-    <a class="journal-card" href="{{ url_for('journal') }}">
-      <div class="journal-cover is-empty" aria-hidden="true"></div>
-      <div class="journal-text">
-        <strong>Страховое право</strong>
         <span></span>
         <span class="short"></span>
       </div>
